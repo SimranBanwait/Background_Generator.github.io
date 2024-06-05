@@ -1,0 +1,13 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo "Building website..."
+      - npm install # Install any dependencies (if needed)
+      - npm run build # Build your website (e.g., using Webpack, Gulp, etc.)
+
+artifacts:
+  files:
+    - index.html
+    - script.js
+    - styles.css
