@@ -3,8 +3,8 @@ phases:
   build:
     commands:
       - echo "Building website..."
-      - npm install # Install any dependencies (if needed)
-      - npm run build # Build your website (e.g., using Webpack, Gulp, etc.)
+      # - npm install # Install any dependencies (if needed)
+      # - npm run build # Build your website (e.g., using Webpack, Gulp, etc.)
 
 artifacts:
   files:
