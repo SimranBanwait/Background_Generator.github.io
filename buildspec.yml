@@ -26,5 +26,5 @@ phases:
  
 post_build:
   commands:
-    - cp -r . /var/www/html  # Copy website files to document root
+    - cp -r . /usr/share/nginx/html  # Copy website files to document root
 
