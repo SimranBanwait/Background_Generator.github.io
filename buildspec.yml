@@ -28,3 +28,8 @@ post_build:
   commands:
     - cp -r . /var/www/html  # Copy website files to document root
 
+artifacts:
+  files:
+    - index.html
+    - script.js
+    - styles.css
