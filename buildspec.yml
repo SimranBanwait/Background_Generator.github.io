@@ -1,13 +1,30 @@
+# version: 0.2
+# phases:
+#   build:
+#     commands:
+#       - echo "Building website..."
+
+# artifacts:
+#   files:
+#     - index.html
+#     - script.js
+#     - styles.css
+
+
+
 version: 0.2
+ 
 phases:
+  install:
+    commands:
+      - apt-get update
+      - apt-get install -y nginx
+ 
   build:
     commands:
-      - echo "Building website..."
-      # - npm install # Install any dependencies (if needed)
-      # - npm run build # Build your website (e.g., using Webpack, Gulp, etc.)
+      - echo "Building website..."  # Optional placeholder
+ 
+post_build:
+  commands:
+    - cp -r . /var/www/html  # Copy website files to document root
 
-artifacts:
-  files:
-    - index.html
-    - script.js
-    - styles.css
