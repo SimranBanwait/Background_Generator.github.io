@@ -6,7 +6,7 @@ body {
     letter-spacing: .5em;
     top: 15%;
 /*     background: linear-gradient(to right, red , yellow); */
-    linear-gradient(to right, rgb(255, 36, 226), rgb(140, 0, 255));
+    background:linear-gradient(to right, rgb(0, 110, 255), rgb(255, 0, 0));
 }
 
 h1 {
