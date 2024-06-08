@@ -3,7 +3,7 @@
 
 # Set the S3 bucket and path
 S3_BUCKET="billbucketforpoc"
-S3_PATH="Practice-Pipeline/SourceArti/"
+S3_PATH="Practice-Pipeline/BuildArtif/"
 
 # Get the latest file using the last modified timestamp
 LATEST_FILE=$(aws s3 ls "s3://${S3_BUCKET}/${S3_PATH}" | sort -r | head -n 1 | awk '{print $4}')
