@@ -12,7 +12,7 @@ phases:
  
 post_build:
   commands:
-    - cp -r --include="*.html *.js *.css" . /var/www/html
+    - cp -r --include="index.html *script.js *styles.css" . /var/www/html
 
 artifacts:
   files:
