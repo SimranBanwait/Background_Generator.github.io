@@ -9,5 +9,4 @@ node{
     stage("Deploy"){
       steps{echo 'Deploying...'}
     }
-  }
-
+}
