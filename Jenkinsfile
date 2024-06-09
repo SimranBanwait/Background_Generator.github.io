@@ -1,6 +1,5 @@
 node{
   checkout scm
-  stages{
     stage("Build"){
       steps{echo 'Building...'}
     }
@@ -11,4 +10,4 @@ node{
       steps{echo 'Deploying...'}
     }
   }
-}
+
