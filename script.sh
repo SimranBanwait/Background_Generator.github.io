@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# Set the S3 bucket and path
+# Set the S3 bucket and path test
 S3_BUCKET="billbucketforpoc"
 S3_PATH="Practice-Pipeline/BuildArtif/"
 
