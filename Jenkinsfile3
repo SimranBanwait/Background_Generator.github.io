@@ -1,0 +1,21 @@
+pipeline {
+  agent any  // You can optionally specify a specific agent here
+
+  stages {
+    stage('Checkout') {
+      steps {
+        // Checkout the Git repository using Git SCM plugin
+        git branch: 'main', // Replace with your branch name
+           credentialsId: 'Git-Creds', // Replace with your credentials ID (if needed)
+           url: 'https://github.com/SimranBanwait/Background_Generator.github.io.git' // Replace with your Git repository URL
+      }
+    }
+    stage('Build') {
+      steps {
+        // Use sh step to execute a shell command
+        sh 'cp -r . target/' // This copies all files from current directory to a new directory named "target"
+        echo "Building..."
+      }
+    }
+  }
+}
