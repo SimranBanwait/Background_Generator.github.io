@@ -13,7 +13,7 @@ pipeline {
     stage('Build') {
       steps {
         // Use sh step to execute a shell command
-        sh 'cp -r Baarish.mp3 target/' // This copies all files from current directory to a new directory named "target"
+        sh 'cp -r Baarish.mp3 Alone.flac target/' // This copies all files from current directory to a new directory named "target"
         echo "Building..."
       }
     }
