@@ -2,7 +2,13 @@ pipeline {
   agent any
 
   stages {
-
+    stage('Fetch Source Code') {
+        steps{
+            dir('repo') {
+                git branch: "${params.Branch}", credentialsId: 'Creds', url: "${params.RepoURL}"
+            }
+        }
+    }
     stage('Build') {
       steps {
         // Use sh step to execute a shell command
