@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main',
+                    credentialsId: 'Creds', // Replace with your credential ID
+                    url: 'https://github.com/SimranBanwait/Background_Generator.github.io.git'
+            }
+        }
+        stage('Copy Large Files') {
+            steps {
+                script {
+                    def largeFiles = ['Baarish.mp3', 'Alone.flac', '...'] // List your large file names here
+                    def targetFolder = '/Users/simran/Downloads/Code/test'
+
+                    // Loop through each file name
+                    largeFiles.each { fileName ->
+                        if (fileExists(fileName)) {
+                            sh "cp ${fileName} ${targetFolder}"
+                            echo "Copied ${fileName} to ${targetFolder}"
+                        } else {
+                            echo "File '${fileName}' not found. Skipping..."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
