@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        shell 'cp -r Baarish.mp3 /Users/simran/Downloads/Code/test'
+        shell 'cp -r Baarish.mp3 /Users/simran/Downloads/Code/test/'
         echo "Building..."
       }
     }
