@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'cp -r Baarish.mp3 /home/ubuntu'
+        sh 'sudo cp -r Baarish.mp3 /home/ubuntu'
         echo "Building..."
       }
     }
