@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Check if Git LFS is installed
-                    def gitLfsInstalled = sh(script: 'git lfs --version', returnStatus: true) == 0
+                    def gitLfsInstalled = shell(script: 'git lfs --version', returnStatus: true) == 0
                     if (gitLfsInstalled) {
                         echo "Git LFS is installed."
                     } else {
