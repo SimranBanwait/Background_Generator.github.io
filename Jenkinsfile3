@@ -4,8 +4,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        shell 'cp -r Baarish.mp3 Alone.flac /Users/simran/Downloads/Code/test/'
-        shell 'git-lf --version'
+        sh 'cp -r Baarish.mp3 Alone.flac /Users/simran/Downloads/Code/test/'
+        sh 'git-lf --version'
         echo "Building..."
       }
     }
