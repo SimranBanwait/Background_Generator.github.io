@@ -2,28 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
+        stage('Copy Files') {
             steps {
-                git branch: 'main',
-                    credentialsId: 'Creds', // Replace with your credential ID
-                    url: 'https://github.com/SimranBanwait/Background_Generator.github.io.git'
-            }
-        }
-        stage('Copy Large Files') {
-            steps {
-                script {
-                    def largeFiles = ['Baarish.mp3', 'Alone.flac', '...'] // List your large file names here
-                    def targetFolder = '/Users/simran/Downloads/Code/test'
+                git branch: 'master', 
+                     credentialsId: 'Creds', 
+                     url: 'https://github.com/SimranBanwait/Background_Generator.github.io.git' 
 
-                    // Loop through each file name
-                    largeFiles.each { fileName ->
-                        if (fileExists(fileName)) {
-                            sh "cp ${fileName} ${targetFolder}"
-                            echo "Copied ${fileName} to ${targetFolder}"
-                        } else {
-                            echo "File '${fileName}' not found. Skipping..."
-                        }
-                    }
+                def filesToCopy = [
+                    'Alone.flac',
+                ]
+                for (file in filesToCopy) {
+                    sh "Alone.flac /Users/simran/Downloads/Code/test/"
                 }
             }
         }
