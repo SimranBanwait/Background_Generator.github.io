@@ -2,17 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Copy Files') {
+        stage('Checkout') {
             steps {
-                git branch: 'master', 
-                     credentialsId: 'Creds', 
-                     url: 'https://github.com/SimranBanwait/Background_Generator.github.io.git' 
-
-                def filesToCopy = [
-                    'Alone.flac',
-                ]
-                for (file in filesToCopy) {
-                    sh "Alone.flac /Users/simran/Downloads/Code/test/"
+                // Checkout the code from Git repository
+                checkout scm
+            }
+        }
+        stage('Check Git LFS') {
+            steps {
+                script {
+                    // Check if Git LFS is installed
+                    def gitLfsInstalled = sh(script: 'git lfs --version', returnStatus: true) == 0
+                    if (gitLfsInstalled) {
+                        echo "Git LFS is installed."
+                    } else {
+                        error "Git LFS is not installed. Please install Git LFS."
+                    }
                 }
             }
         }
